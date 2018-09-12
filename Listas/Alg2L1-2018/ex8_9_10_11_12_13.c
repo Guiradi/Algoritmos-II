@@ -1,4 +1,4 @@
-/* 8, 9, 10 */
+/* 8, 9, 10, 11 */
 #include <stdio.h>
 #include <stdlib.h>
 #include <conio.h>
@@ -52,54 +52,55 @@ void LeFuncionarios (TipoCadastro *x){
 void ListaFuncionarios(TipoCadastro x){
 	int i;
 	for (i = 0; i < x.quant; i++){
-		printf("\n\nFuncionario %d\n", x.quant);
+		printf("\n\nFuncionario %d\n", i+1);
 		printf("Nome: %s\n", x.funcionario[i].nome);
 		printf("RG: %s\n", x.funcionario[i].rg);
 		printf("Salario: R$ %.2f\n", x.funcionario[i].salario);
 		printf("Idade: %d anos\n", x.funcionario[i].idade);
 		printf("Sexo: %c\n", x.funcionario[i].sexo);
 		printf("Data de Nascimento: %d/%d/%d\n", x.funcionario[i].dia, x.funcionario[i].mes, x.funcionario[i].ano);
-		system("pause");
 	}
+	system("pause");
 }
 /**********************/
-void troca (TipoReg x, TipoReg y, int j, int k){
+void troca (TipoReg x[100], TipoReg y[100], int j, int k){
 	TipoReg aux;
-	aux = a[j];
-	a[j] = b[j+1];
-	b[j+1] = aux;
+	aux = x[j];
+	x[j] = y[k];
+	y[k] = aux;
 }
 /******************/
-void ordenaAlfabetica() {
+void OrdenaNome(TipoCadastro *x) {
 	int i, j, trocado = 1;
-	for (i = 0; i < num - 1 && trocado; i++){
+	for (i = 0; i < (*x).quant - 1 && trocado; i++){
 		trocado = 0;
-		for (j = 0; j < num - i - 1; j++){
-			if (strcmp(aluno[j].nome,aluno[j+1].nome) > 0){
+		for (j = 0; j < (*x).quant - i - 1; j++){
+			if (strcmp((*x).funcionario[j].nome,(*x).funcionario[j+1].nome) > 0){
 				trocado = 1;
-				troca (aluno, aluno, j, j+1);
+				troca ((*x).funcionario, (*x).funcionario, j, j+1);
 			}
 		}
 	}
 }
 /********************/
-void ordenaCR() {
+void OrdenaSalario(TipoCadastro *x) {
 	int i, j, trocado = 1;
-	for (i = 0; i < num - 1 && trocado; i++){
+	for (i = 0; i < (*x).quant - 1 && trocado; i++){
 		trocado = 0;
-		for (j = 0; j < num - i - 1; j++){
-			if (aluno[j].CR < aluno[j+1].CR){
+		for (j = 0; j < (*x).quant - i - 1; j++){
+			if ((*x).funcionario[j].salario > (*x).funcionario[j+1].salario){
 				trocado = 1;
-				troca (aluno, aluno, j, j+1);
+				troca ((*x).funcionario, (*x).funcionario, j, j+1);
 			}
 		}
 	}
 }
-/**********************/
+/**********************
 int main(){
 	TipoCadastro cadastro;
 	IniciaCadastro(&cadastro);
 	LeFuncionarios(&cadastro);
+	OrdenaSalario(&cadastro);
 	ListaFuncionarios(cadastro);
 	return 0;
-}
+}*/
