@@ -1,0 +1,18 @@
+/*5 Seja F a versão recursiva da função de Fibonacci. O cálculo do valor da expressão F(3) provocará
+a seguinte sequência de invocações da função:
+F(3)
+	F(2)
+		F(1)
+		F(0)
+ 	F(1)
+Qual a sequência de invocações da função provocada por F(5)? 
+
+F(5)
+	F(4)
+		F(3)
+			F(2)
+				F(1)
+				F(0)
+			F(1)
+		F(2)
+	F(3)*/
