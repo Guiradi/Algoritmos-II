@@ -1,5 +1,5 @@
 // Vetor v = [20, 12, 28, 05, 10, 18]
-// Ordenação usando insert sort:
+
 #include <stdio.h>
 #include <stdlib.h>
 
@@ -62,6 +62,8 @@ int main()
 	int v[6] = {20, 12, 28, 05, 10, 18};
 	
 	mostra_vetor(v,n);
+	//insert_sort(v,n);
+	//select_sort(v,n);
 	bubble_sort(v,n);
 	mostra_vetor(v,n);
 	system("pause>>null");

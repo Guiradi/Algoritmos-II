@@ -1,0 +1,4 @@
+	Não compraria, porque a função que representa a complexidade desse algoritmo é exponencial,
+o que significa que quanto maior for a minha entrada de dados n, maior, exponencialmente, será
+a o tempo de execução que o algoritmo levará para realizar a tarefa, não sendo, portanto, um
+algoritmo eficiente.
